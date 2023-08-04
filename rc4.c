@@ -4,6 +4,18 @@
 
 #include "rc4.h"
 
+#ifdef DEBUG_SBOX
+static void dbg_print_sbox(RC4_t *s, int bpr)
+{
+	int i;
+	for(i=0; i<SBOXSIZE; i++) {
+		printf("%02X", s->SBOX[i]);
+		if(((i+1)%bpr) == 0) { printf("\n"); } else { printf(" "); }
+	}
+	printf("\n");
+}
+#endif
+
 RC4_t* new_rc4_state(uint8_t *iv, uint32_t ivlen, uint8_t *key, uint32_t keylen)
 {
 	RC4_t *s;
