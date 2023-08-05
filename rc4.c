@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include "rc4.h"
+#include "xor_swap.h"
 
 #ifdef DEBUG_SBOX
 static void dbg_print_sbox(RC4_t *s, int bpr)

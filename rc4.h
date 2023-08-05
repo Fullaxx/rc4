@@ -3,8 +3,6 @@
 
 #include <stdint.h>
 
-#define xorSwap(x,y) { if((x) != (y)) { (x) ^= (y) ^= (x) ^= (y); } }
-
 #define SBOXSIZE (256)
 typedef struct rc4_state {
 	uint8_t SBOX[SBOXSIZE];
