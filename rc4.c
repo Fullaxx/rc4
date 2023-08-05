@@ -7,8 +7,7 @@
 #ifdef DEBUG_SBOX
 static void dbg_print_sbox(RC4_t *s, int bpr)
 {
-	int i;
-	for(i=0; i<SBOXSIZE; i++) {
+	for(int i=0; i<SBOXSIZE; i++) {
 		printf("%02X", s->SBOX[i]);
 		if(((i+1)%bpr) == 0) { printf("\n"); } else { printf(" "); }
 	}
@@ -45,7 +44,7 @@ RC4_t* new_rc4_state(uint8_t *iv, uint32_t ivlen, uint8_t *key, uint32_t keylen)
 
 int rc4_crypt(RC4_t *s, uint8_t *data, uint32_t data_len, uint8_t *out, uint32_t print_keystream)
 {
-	int n=0, i=0, j=0;
+	int i=0, j=0, n;
 
 	// Loop over each byte in the plaintext string
 	for(n=0; n<data_len; n++) {
