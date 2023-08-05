@@ -34,7 +34,7 @@ void run_test_vectors(rc4_io_t *tv)
 	s = new_rc4_state(tv->iv, 0, tv->key, strlen((char *)tv->key));
 	(void) rc4_crypt(s, tv->ct, strlen((char *)tv->pt), tv->dec, 0);
 	printf(" %s", (char *)tv->dec);
-	if(strcmp(tv->pt, tv->dec)) { printf(" ERROR!"); }
+	if(strcmp((char *)tv->pt, (char *)tv->dec)) { printf(" ERROR!"); }
 	printf("\n");
 	del_rc4_state(s);
 }
