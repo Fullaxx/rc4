@@ -8,7 +8,7 @@ CFLAGS="-Wall"
 OPTCFLAGS="${CFLAGS} ${OPT}"
 DBGCFLAGS="${CFLAGS} ${DBG}"
 
-gcc ${OPTCFLAGS} wiki_vec.c rc4.c -o wiki_vec.exe
-gcc ${DBGCFLAGS} wiki_vec.c rc4.c -o wiki_vec.dbg
+gcc ${OPTCFLAGS} wiki_vec_rc4.c rc4.c -o wiki_vec_rc4.exe
+gcc ${DBGCFLAGS} wiki_vec_rc4.c rc4.c -o wiki_vec_rc4.dbg
 
 strip *.exe
